@@ -32,6 +32,7 @@ public final class DateUtil {
 	public static final String TIME = "HH:mm:ss";
 	public static final String HOUR = "HH:mm";
 	public static final String DATE_TIME = "yyyy-MM-dd HH:mm:ss";
+	public static final String DATE_HOUR = "yyyy-MM-dd HH:mm";
 	
 	/**
 	 * 将时间字符串转为Date对象，时间字符串格式要求：yyyy-MM-dd HH:mm:ss
@@ -274,6 +275,10 @@ public final class DateUtil {
 	public static String formatDate(Date date,String type) {
 		SimpleDateFormat sdf = new SimpleDateFormat(type);
 		return sdf.format(date);
+	}
+	
+	public static String formatDate(long date, String type) {
+		return formatDate(new Date(date), type);
 	}
 	
 	/**
